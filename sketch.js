@@ -4,7 +4,7 @@ let signIn;
 let settings;
 let leaderboard;
 let menuBg;
-let backButon;
+let backButton;
 
 // level menu variables
 let lvl1;
@@ -24,6 +24,10 @@ function setup(){
 
 createCanvas(windowWidth, windowHeight);
 
+  
+if(scene == 0){
+
+
   playButton = createButton("Play");
   playButton.mousePressed(findLevel);
   
@@ -41,30 +45,46 @@ createCanvas(windowWidth, windowHeight);
   
   leaderboard = createButton("Leaderboard");
   leaderboard.mousePressed(leaderboardDisplay);
+
   
   buttonsCust();
+
+}// end home screen
 
 //drawLevelButtons();
 //lvl1 = createButton("Level 1");
 //lvl1.position(100, 100);
 
+else if(scene == 1){
+
+  //LEVELS DISPLAY, ETC
+
+}// end levels screen
 
 
 }// end setup
 
 function draw(){
 
-background(0);
+background(7, 7, 110);
 
 homeButtonSwitch();
 gameLevelDraw();
 
-if(state == 0){
+strokeWeight = 0;
+    fill(0, 0, 255);
+    rect(0, windowHeight - 30, windowWidth, 30);
+    rect(0, 0, windowWidth, 30);
+    rect(windowWidth - 30, 0, 30, windowHeight);
+    rect(0, 0, 30, windowHeight);
+
+if(scene == 0){
 
     // draw menu
     textSize(50);
     fill(51, 102, 204);
-    text("Pac - Man, remade.", width/3, 150);
+    text("Pac - Man, remade.", width/3, 150); 
+
 
     // if(lvl1.mousePressed){
     //     state = 1;
@@ -117,7 +137,7 @@ function homeButtonSwitch(){
 function findLevel(){
   
     scene = 1;
-    // switch to scene 1 when play button is pressed, but level will vary depending on whos playing/ if they logged in
+    // switch to scene 1 when play button is pressed, but level will vary depending on who is playing/ if they logged in
     
     fill(153, 204, 255);
     rect(300, 300, width/1.5, height/ 2);
@@ -157,21 +177,29 @@ function findLevel(){
 function buttonsCust(){
   
     playButton.position(width/2, height/3);
+    playButton.style("background-color", "#ffff99");
     playButton.style("padding", "40px 50px");
+    playButton.style("border-radius", "50px");
     
     signIn.position(width/ 2 + 200 , (2*height)/3);
+    signIn.style("background-color", "#ffff99");
     signIn.style("padding", "20px 50px")
   
     signUp.position(width/3, (2*height)/3);
+    signUp.style("background-color", "#ffff99");
     signUp.style("padding", "20px 50px")
     
     settings.position(100, 100);
+    settings.style("background-color", "#ffff99");
     settings.style("padding", "20px 50px");
 
-    backButton.position(100, (height - 100));
-    backButton.style("padding", "20px 50px");
+    backButton.position(20, 10);
+    backButton.style("background-color", "#ffff99");
+    backButton.style("padding", "10px 30px");
+    backButton.style("border-radius", "5px");
     
     leaderboard.position((width - (150 + leaderboard.width)) , 100);
+    leaderboard.style("background-color", "#ffff99");
     leaderboard.style("padding", "20px 50px");
     
   }// end buttonsCust
