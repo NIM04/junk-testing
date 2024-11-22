@@ -51,15 +51,12 @@ if(scene == 0){
 
 }// end home screen
 
-//drawLevelButtons();
-//lvl1 = createButton("Level 1");
-//lvl1.position(100, 100);
 
-else if(scene == 1){
+// else if(scene == 1){
 
-  //LEVELS DISPLAY, ETC
+//   findLevel();
 
-}// end levels screen
+// }// end levels screen
 
 
 }// end setup
@@ -68,8 +65,7 @@ function draw(){
 
 background(7, 7, 110);
 
-homeButtonSwitch();
-gameLevelDraw();
+//homeButtonSwitch();
 
 strokeWeight = 0;
     fill(0, 0, 255);
@@ -85,22 +81,32 @@ if(scene == 0){
     fill(51, 102, 204);
     text("Pac - Man, remade.", width/3, 150); 
 
-
     // if(lvl1.mousePressed){
     //     state = 1;
     //     console.log("Button 1 is working")
     // }
+
+}
+else if(scene == 1){
+  
+  playButton.remove();
+  leaderboard.remove();
+  signIn.remove();
+  signUp.remove();
+
+  findLevel();
+
 }
 
-}// end draw
+}// end draw 
 
 
-function homeButtonSwitch(){
+//function homeButtonSwitch(){
   switch(scene){
       
     case 0:
       
-      console.log("Home screen (scene 0) is functioning.");
+     console.log("Home screen (scene 0) is functioning.");
       break;
       
     case 1:
@@ -130,17 +136,22 @@ function homeButtonSwitch(){
       
   }// end switch statement
 
-}// end homeButtonSwitch
+/// }// end homeButtonSwitch
 
 
 // the home button functions
 function findLevel(){
   
     scene = 1;
-    // switch to scene 1 when play button is pressed, but level will vary depending on who is playing/ if they logged in
     
-    fill(153, 204, 255);
-    rect(300, 300, width/1.5, height/ 2);
+    let menuBkg = rect(200, 170, width/1.3, height/ 1.8);
+    menuBkg.fill(153, 204, 255, 50);
+
+    let LVL1 = createButton("Level 1");
+    LVL1.position(menuBkg.width + 10, menuBkg.height + 10);
+    LVL1.style("background-color", "#ffeb66");
+    LVL1.style("padding", "20px 50px");
+    LVL1.show();
     
   }
   
