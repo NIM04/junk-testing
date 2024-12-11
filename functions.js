@@ -73,7 +73,7 @@ function back(){// back button
 
 }//end back
 
-function removeButtons{//remove stubborn buttons
+function removeButtons(){//remove stubborn buttons
 
 }//end removeButtons
 
