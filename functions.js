@@ -1,6 +1,5 @@
 
 
-
 //home/welcome screen:
 
 function buttonsCust(){ //formats home screen
@@ -63,6 +62,8 @@ function leaderboardDisplay(){ // this should link into a high score and login s
 function back(){// back button
     scene -= 1;
 
+    removeButtons();
+    
     if(scene == 0){//make buttons reappear on home screen
         playButton.show();
         signIn.show();
@@ -74,6 +75,15 @@ function back(){// back button
 }//end back
 
 function removeButtons(){//remove stubborn buttons
+
+    if(scene != 1){//remove levels when not on levels screen
+        // for(let i =1; i <= 15; i++){
+        //     String(lvl + [i]).hide();
+        // }//end for
+
+
+
+    }// end if
 
 }//end removeButtons
 
